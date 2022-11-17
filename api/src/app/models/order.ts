@@ -3,7 +3,7 @@ import { model, Schema } from 'mongoose';
 export const Order = model('Order', new Schema({
   table: {
     type: String,
-    required: true
+    required: true,
   },
   status: {
     type: String,
@@ -25,7 +25,7 @@ export const Order = model('Order', new Schema({
       quantity: {
         type: Number,
         default: 1,
-      }
-    }]
-  }
+      },
+    }],
+  },
 }));

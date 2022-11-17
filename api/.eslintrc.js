@@ -1,36 +1,45 @@
 module.exports = {
-  'env': {
-    'es2021': true,
-    'node': true
+  env: {
+    es2021: true,
+    node: true,
   },
-  'extends': [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended'
+  extends: [
+    'airbnb-base',
   ],
-  'parser': '@typescript-eslint/parser',
-  'parserOptions': {
-    'ecmaVersion': 'latest',
-    'sourceType': 'module'
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  'plugins': [
-    '@typescript-eslint'
+  plugins: [
+    '@typescript-eslint',
   ],
-  'rules': {
-    'indent': [
+  rules: {
+    'import/prefer-default-export': 'off',
+    'consistent-return': 'off',
+    'import/extensions': [
       'error',
-      2
+      'ignorePackages',
+      {
+        js: 'never',
+        ts: 'never',
+      },
     ],
-    'linebreak-style': [
-      'error',
-      'unix'
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+    'import/extensions': [
+      2,
+      'ignorePackages',
+      {
+        '': 'never',
+        js: 'never',
+        ts: 'never',
+      },
     ],
-    'quotes': [
-      'error',
-      'single'
-    ],
-    'semi': [
-      'error',
-      'always'
-    ]
-  }
+  },
 };
